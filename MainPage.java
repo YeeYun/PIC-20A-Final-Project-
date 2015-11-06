@@ -23,6 +23,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     private String passInput = "pic20a";
+    private Boolean testPassword = true;
     
     /**
      * This method is called from within the constructor to initialize the form.
