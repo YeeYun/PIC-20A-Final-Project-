@@ -23,7 +23,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     private String passInput = "pic20a";
-    private Boolean testPassword = false;
+    //private Boolean testPassword = true;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -136,9 +136,8 @@ public class MainPage extends javax.swing.JFrame {
    
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        if (testPassword == true){
+        // TODO add your handling code here:       
+        //if (testPassword == true){
         this.setVisible(false);
         JFrame frame = new JFrame();
         frame.setBackground(Color.WHITE);
@@ -159,10 +158,10 @@ public class MainPage extends javax.swing.JFrame {
         //frame.pack();
         panel.add(textBox);
         frame.setContentPane(panel);
-        }
-        else {
-        JOptionPane.showMessageDialog(null, "Password is not correct");
-    }
+        //}
+        //else {
+        //JOptionPane.showMessageDialog(null, "Password is not correct");
+    //}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
@@ -178,7 +177,7 @@ public class MainPage extends javax.swing.JFrame {
         
         if (pass1.equals(passInput)){
             JOptionPane.showMessageDialog(null, "Correct!");
-            testPassword = true;
+            //testPassword = true;
         }
         else {
             JOptionPane.showMessageDialog(null, "Password is not correct");
