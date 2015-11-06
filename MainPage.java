@@ -23,7 +23,7 @@ public class MainPage extends javax.swing.JFrame {
     }
     
     private String passInput = "pic20a";
-    private Boolean testPassword = true;
+    private Boolean testPassword = false;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,8 +36,8 @@ public class MainPage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPasswordField2 = new javax.swing.JPasswordField(20);
+        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -60,17 +60,17 @@ public class MainPage extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Welcome!");
 
-        jButton1.setText("Start!");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jPasswordField2.setText("password");
         jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Start!");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -133,9 +133,12 @@ public class MainPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        if (testPassword == true){
         this.setVisible(false);
         JFrame frame = new JFrame();
         frame.setBackground(Color.WHITE);
@@ -156,6 +159,10 @@ public class MainPage extends javax.swing.JFrame {
         //frame.pack();
         panel.add(textBox);
         frame.setContentPane(panel);
+        }
+        else {
+        JOptionPane.showMessageDialog(null, "Password is not correct");
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
@@ -171,6 +178,7 @@ public class MainPage extends javax.swing.JFrame {
         
         if (pass1.equals(passInput)){
             JOptionPane.showMessageDialog(null, "Correct!");
+            testPassword = true;
         }
         else {
             JOptionPane.showMessageDialog(null, "Password is not correct");
